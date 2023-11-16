@@ -19,16 +19,16 @@ public class StudentController {
     }
 
     @GetMapping
-    public List<Student> getAllStudents() {
+    public List<Student> findAll() {
         return studentRepository.findAll();
     }
     @GetMapping("/{id}")
-    public Student getStudentById(@PathVariable Long id) {
+    public Student findById(@PathVariable Long id) {
         return studentRepository.findById(id);
     }
 
     @PostMapping
-    public void addStudent(@RequestBody Student student) {
+    public void save(@RequestBody Student student) {
         studentRepository.save(student);
     }
 
@@ -38,7 +38,7 @@ public class StudentController {
     }
 
     @DeleteMapping("/{id}")
-    public void deleteStudent(@PathVariable Long id) {
+    public void deleteById(@PathVariable Long id) {
         studentRepository.deleteById(id);
     }
 
