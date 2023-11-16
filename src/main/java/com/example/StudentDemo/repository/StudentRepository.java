@@ -1,7 +1,13 @@
 package com.example.StudentDemo.repository;
 
 import com.example.StudentDemo.model.Student;
-import org.springframework.data.jpa.repository.JpaRepository;
+import java.util.List;
 
-public interface StudentRepository extends JpaRepository<Student, Long> {
+public interface StudentRepository {
+    List<Student> findAll();
+    Student findById(Long id);
+    void save(Student student);
+
+    void updateStudent(Long id, Student student);
+    void deleteById(Long id);
 }
