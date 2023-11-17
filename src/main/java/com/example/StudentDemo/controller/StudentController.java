@@ -37,7 +37,7 @@ public class StudentController {
     }
 
 
-    @PutMapping("/{id}")
+    @PutMapping("/update/{id}")
     public ResponseEntity<Void> updateStudent(@PathVariable Long id, @RequestBody Student updatedStudent) {
         if (studentRepository.findById(id) != null) {
             studentRepository.updateStudent(id, updatedStudent);
@@ -47,7 +47,7 @@ public class StudentController {
         }
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/delete/{id}")
     public ResponseEntity<Void> deleteStudent(@PathVariable Long id) {
         if (studentRepository.findById(id) != null) {
             studentRepository.deleteById(id);
